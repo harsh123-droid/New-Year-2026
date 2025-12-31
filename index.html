@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy New Year 2026 — Harsh</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta name="description" content="A coder–designer New Year wish for 2026: clean, animated, and delightful." />
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="noise"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <span class="brand-text">NY<span class="brand-year">2026</span></span>
+    </div>
+    <nav class="nav">
+      <a href="#wish" class="nav-link">Wish</a>
+      <a href="#code" class="nav-link">Code</a>
+      <a href="#credits" class="nav-link">Credits</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="wish" class="hero">
+      <h1 class="hero-title">
+        <span class="title-top">Happy New Year</span>
+        <span class="title-year">2026</span>
+      </h1>
+      <p class="hero-subtitle">
+        May your builds pass on first run, and your designs glow beyond the grid.
+      </p>
+      <div class="cta-row">
+        <a class="cta-btn primary" href="#code">View the greeting</a>
+        <a class="cta-btn ghost" href="#share">Share</a>
+      </div>
+
+      <div class="confetti" aria-hidden="true">
+        <!-- Pure CSS confetti pieces -->
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <section id="code" class="code-card">
+      <div class="code-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="file-name">greetings.css</span>
+      </div>
+      <pre class="code-block"><code>/* New Year 2026 — Harsh */
+:root {
+  --happiness: 100%;
+  --creativity: infinite;
+  --bugs: none;
+}
+
+.friend {
+  wishes: var(--happiness) var(--creativity);
+  constraints: var(--bugs);
+}
+
+@new-year {
+  celebrate: true;
+  message: "Shine brighter. Ship bolder. Live kinder.";
+}</code></pre>
+    </section>
+
+    <section id="surprise" class="surprise-section">
+  <h2>Want a surprise?</h2>
+  <button class="surprise-btn" onclick="showSurprise()">🎁 Click Me</button>
+  <div id="surprise-box" class="hidden"></div>
+  <div id="fireworks"></div>
+  <div id="confetti"></div>
+  <audio id="cheer-sound" src="cheer.mp3" preload="auto"></audio>
+</section>
+
+<script>
+  const surprises = [
+    "✨ Happy New Year 2026! May your hard work pays off this year.",
+    "🎨 Design brighter, work smarter, and shine harder this year!",
+    "🚀 2026 is loading... 100% success, joy, and creativity!",
+    "💡 Debug less, imagine more—this year is yours to innovate.",
+    "🎉 Fireworks of happiness and creativity are waiting for you!"
+  ];
+
+  function showSurprise() {
+    const box = document.getElementById("surprise-box");
+    const random = surprises[Math.floor(Math.random() * surprises.length)];
+    box.innerHTML = `<h3>Here's a surprise for you 🎉</h3><p>${random}</p>`;
+    box.classList.remove("hidden");
+
+    // Trigger both effects
+    launchFireworks();
+    launchConfetti();
+  }
+
+  function launchFireworks() {
+    const fireworks = document.getElementById("fireworks");
+    fireworks.innerHTML = "";
+    for (let i = 0; i < 15; i++) {
+      const spark = document.createElement("span");
+      spark.className = "spark";
+      spark.style.left = "50%";
+      spark.style.top = "50%";
+      spark.style.setProperty("--x", (Math.random() - 0.5) * 200 + "px");
+      spark.style.setProperty("--y", (Math.random() - 0.5) * 200 + "px");
+      spark.style.setProperty("--hue", Math.floor(Math.random() * 360));
+      fireworks.appendChild(spark);
+    }
+  }
+
+  function launchConfetti() {
+    const confetti = document.getElementById("confetti");
+    confetti.innerHTML = "";
+    for (let i = 0; i < 30; i++) {
+      const piece = document.createElement("span");
+      piece.className = "confetti-piece";
+      piece.style.left = Math.random() * 100 + "%";
+      piece.style.animationDelay = Math.random() * 2 + "s";
+      confetti.appendChild(piece);
+    }
+  }
+</script>
+
+
+
+    <section id="share" class="share">
+      <h2 class="section-title">Share the cheer</h2>
+      <p class="section-text">
+        Copy the link and send it to your friends. Or export this page and host it anywhere—GitHub Pages, Netlify, or your own domain.
+      </p>
+      <div class="share-box">
+        <input type="text" value="https://your-domain.com/newyear2026" readonly />
+        <button class="copy-btn" aria-label="Copy link">Copy</button>
+      </div>
+    </section>
+  </main>
+
+  <footer id="credits" class="site-footer">
+    <p>Crafted with ❤️ by Harsh — Coder & Designer</p>
+    <p class="fineprint">Typography: Inter & JetBrains Mono. Pure HTML + CSS. No JS needed.</p>
+  </footer>
+</body>
+</html>
